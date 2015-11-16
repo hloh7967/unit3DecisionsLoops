@@ -82,9 +82,9 @@ public class GameOfLifeTest
     }
 
     @Test
-    public void testFinalState()
+    public void testFutureGeneration()
     {
-        /* verify that the actual pattern matches the expected pattern after 3 generations         *  
+        /* verify that the actual pattern matches the expected pattern after 2 or more generations
          */
         
         // ...

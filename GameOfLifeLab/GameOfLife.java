@@ -52,27 +52,26 @@ public class GameOfLife
      */
     private void populateGame()
     {
-        // constants for the location of the three cells initially alive
-        final int X1 = 2, Y1 = 0;
-        final int X2 = 0, Y2 = 2;
-        final int X3 = 1, Y3 = 2;
+        // the location of the three cells initially alive
+        Location loc1 = new Location(0, 2);
+        Location loc2 = new Location(2, 0);
+        Location loc3 = new Location(2, 1);
 
         // the grid of Actors that maintains the state of the game
         //  (alive cells contains actors; dead cells do not)
         Grid<Actor> grid = world.getGrid();
         
         // create and add rocks (a type of Actor) to the three intial locations
-        Rock rock1 = new Rock();
-        Location loc1 = new Location(Y1, X1);
-        grid.put(loc1, rock1);
+        Rock rock;
         
-        Rock rock2 = new Rock();
-        Location loc2 = new Location(Y2, X2);
-        grid.put(loc2, rock2);
+        rock = new Rock();
+        grid.put(loc1, rock);
         
-        Rock rock3 = new Rock();
-        Location loc3 = new Location(Y3, X3);
-        grid.put(loc3, rock3);
+        rock = new Rock();
+        grid.put(loc2, rock);
+        
+        rock = new Rock();
+        grid.put(loc3, rock);
     }
 
     /**
@@ -83,7 +82,7 @@ public class GameOfLife
      * @post    the world has been populated with a new grid containing the next generation
      * 
      */
-    private void createNextGeneration()
+    public void createNextGeneration()
     {
         /** You will need to read the documentation for the World, Grid, and Location classes
          *      in order to implement the Game of Life algorithm and leverage the GridWorld framework.
@@ -102,7 +101,8 @@ public class GameOfLife
      * @param   row the row (zero-based index) of the actor to return
      * @param   col the column (zero-based index) of the actor to return
      * @pre     the grid has been created
-     * @return  the actor at the specified row and column
+     * @return  the actor at the specified row and column or null if no actor
+     *              exists at that row and column
      */
     public Actor getActor(int row, int col)
     {
