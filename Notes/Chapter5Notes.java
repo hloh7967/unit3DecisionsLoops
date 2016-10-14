@@ -54,5 +54,9 @@ public class Chapter5Notes
         {
             return false;
         }
+        
+        int result = str1.compareTo( str2);
+        String firstStr = null;
+        if (result 
     }
 }
