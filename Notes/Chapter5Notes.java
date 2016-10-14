@@ -36,4 +36,23 @@ public class Chapter5Notes
         }
     }
     
+    public static boolean floatsAreEqual( double num1, double num2)
+    {
+        /*
+         * if we use the equality operator for doubles. it will only
+         * return true if they are =
+         * thais prob nto the case
+         * we will check isn they are close enough
+         * 
+         */
+        final double EPSILON = 1e-14;
+        if (Math.abs(num1 - num2) <EPSILON)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
