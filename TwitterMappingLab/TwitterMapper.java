@@ -43,6 +43,7 @@ public class TwitterMapper
     public static void main ( String[] args ) throws TwitterException, IOException
     {
         TwitterMapper twitterMapper = new TwitterMapper( "coding" );
+        twitterMapper.tweetOut("I just tweeted from my Java program! #APCSRocks #leta huskieleadtheway Thansk @gcschmit");
     }
     
     
