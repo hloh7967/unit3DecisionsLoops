@@ -9,29 +9,27 @@ import java.util.Scanner;
 import twitter4j.*;
 
 /**
- * Write a description of class Tweet here.
+ * Write a description of class State here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Tweet
+public class State
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private String user;
-    private String text;
-    private twitter4j.GeoLocation location;
-    private Date date;
+    private String abbreviation;
+    private twitter4j.GeoLocation center;
+    private double area;
     private double sentiment;
     /**
-     * Default constructor for objects of class Tweet
+     * Default constructor for objects of class State
      */
-    public Tweet(String u, String t, twitter4j.GeoLocation l, Date d)
+    public State(String abr, twitter4j.GeoLocation c, double a, double s)
     {
-        user = u;
-        text = t;
-        location = l;
-        date = d;
-        Tweet.this.calculateSentiment();
+        abbreviation = abr;
+        center = c;
+        area = a;
+        sentiment = s;
     }
 
     /**
@@ -45,18 +43,8 @@ public class Tweet
      * @param    y    description of parameter y
      * @return    description of the return value
      */
-    public void calculateSentiment()
+    public void setSentiment(double sentval)
     {
-         SentimentDictionary line = SentimentDictionary.getSingleton();
-         Scanner s = new Scanner(text);
-         double value = 0;
-         while (s.hasNext()) {
-             value += line.getSentiment(s.next());
-            }
-         
-    }
-    public String toString()
-    {
-        return "";
+        this.sentiment = sentval;
     }
 }
