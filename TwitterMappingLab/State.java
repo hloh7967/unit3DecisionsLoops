@@ -24,12 +24,12 @@ public class State
     /**
      * Default constructor for objects of class State
      */
-    public State(String abr, twitter4j.GeoLocation c, double a, double s)
+    public State(String abr, twitter4j.GeoLocation c, double a)
     {
         abbreviation = abr;
         center = c;
         area = a;
-        sentiment = s;
+        sentiment = 0;
     }
 
     /**
@@ -46,5 +46,22 @@ public class State
     public void setSentiment(double sentval)
     {
         this.sentiment = sentval;
+    }
+    
+    public String getabbreviation()
+    {
+        return this.abbreviation;
+    }
+    public twitter4j.GeoLocation getcenter()
+    {
+        return this.center;
+    }
+        public double getarea()
+    {
+        return this.area;
+    }
+        public double getsentiment()
+    {
+        return this.sentiment;
     }
 }
