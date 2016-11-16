@@ -47,7 +47,8 @@ public class State
     {
         this.sentiment = sentval;
     }
-    
+    
+
     public String getabbreviation()
     {
         return this.abbreviation;
@@ -63,5 +64,18 @@ public class State
         public double getsentiment()
     {
         return this.sentiment;
+    }
+    
+    public double getradius()
+    {
+        double rad = Math.sqrt(area/3.14);
+        return rad;
+    }
+    
+    public String toString()
+    {
+        String val = "The State abbreviation is " + abbreviation + ". The center is " + center
+        + ". The area is " + area + ". The sentiment is " + sentiment;
+        return val;
     }
 }

@@ -57,6 +57,8 @@ public class Tweet
     }
     public String toString()
     {
-        return "";
+        String ret = "The user is: " + user + ". The text given is: " + text + 
+        ". The location given is: " + location + ". The date given is: " + date;
+        return ret;
     }
 }
