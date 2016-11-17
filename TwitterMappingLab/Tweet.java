@@ -50,10 +50,10 @@ public class Tweet
          SentimentDictionary line = SentimentDictionary.getSingleton();
          Scanner s = new Scanner(text);
          double value = 0;
-         while (s.hasNext()) {
+         while (s.hasNext() && s != null && location != null && date != null) {
              value += line.getSentiment(s.next());
             }
-         
+         sentiment = value;
     }
     public String toString()
     {

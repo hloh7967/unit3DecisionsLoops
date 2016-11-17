@@ -6,20 +6,20 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Write a description of test class TweetTest here.
+ * Write a description of test class StateTest here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class TweetTest
+public class StateTest
 {
     /** description of instance variable x (add comment for each instance variable) */
     private int x;
 
     /**
-     * Default constructor for objects of class TweetTest
+     * Default constructor for objects of class StateTest
      */
-    public TweetTest()
+    public StateTest()
     {
         // initialise instance variables
         x = 0;
@@ -48,15 +48,19 @@ public class TweetTest
     @Test
     public void testmethod()
     {
-        Tweet tt = new Tweet("Name","hi", null, null);
-        tt.calculateSentiment();
-        tt.toString();
+        State state = new State("IL", null, 0);
+        state.getAbbreviation();
+        state.getCenter();
+        state.getArea();
+        state.getSentiment();
+        state.getRadius();
     }
+
     @Test
-    public void calculateSentimentTest()
+    public void Getradius()
     {
-        Tweet tt = new Tweet("Name","hi", null, null);
-        tt.calculateSentiment();
-        
+        State state = new State("IL", null, 0);
+        state.getRadius();
     }
 }
+

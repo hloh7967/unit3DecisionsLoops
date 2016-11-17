@@ -49,24 +49,24 @@ public class State
     }
     
 
-    public String getabbreviation()
+    public String getAbbreviation()
     {
         return this.abbreviation;
     }
-    public twitter4j.GeoLocation getcenter()
+    public twitter4j.GeoLocation getCenter()
     {
         return this.center;
     }
-        public double getarea()
+        public double getArea()
     {
         return this.area;
     }
-        public double getsentiment()
+        public double getSentiment()
     {
         return this.sentiment;
     }
     
-    public double getradius()
+    public double getRadius()
     {
         double rad = Math.sqrt(area/3.14);
         return rad;

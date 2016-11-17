@@ -89,6 +89,11 @@ public class TwitterMapper
     public void findTweetsForState( State state) throws TwitterException
     {
         
+        Query query = new Query("source:twitter4j yusukey").geoCode(state.getCenter(),state.getRadius()
+        ,state.getAbbreviation())
+        ;
+        QueryResult result = twitter.search(query);
+
     }
     
     /**
