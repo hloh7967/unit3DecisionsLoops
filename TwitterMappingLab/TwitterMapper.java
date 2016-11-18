@@ -42,8 +42,13 @@ public class TwitterMapper
      */
     public static void main ( String[] args ) throws TwitterException, IOException
     {
-        TwitterMapper twitterMapper = new TwitterMapper( "coding" );
-        twitterMapper.tweetOut("I just tweeted from my Java program! #APCSRocks #leta huskieleadtheway Thansk @gcschmit");
+        Scanner s = new Scanner(System.in);
+        System.out.println("What are you searching for? (Tested Using cat) ");
+        String key = s.next();
+        TwitterMapper twitterMapper = new TwitterMapper( key );
+        twitterMapper.findTweetsForAllStates();
+        twitterMapper.mapSentimentForAllStates();
+        
     }
     
     
@@ -88,11 +93,21 @@ public class TwitterMapper
      */
     public void findTweetsForState( State state) throws TwitterException
     {
-        
-        Query query = new Query("source:twitter4j yusukey").geoCode(state.getCenter(),state.getRadius()
-        ,state.getAbbreviation())
+        Query query = new Query(keyword).geoCode(state.getCenter(),state.getRadius(),state.getAbbreviation())
         ;
+        int count = 0;
+        
         QueryResult result = twitter.search(query);
+        for (Status status : result.getTweets())
+        {
+             Tweet tweet = new Tweet(status.getInReplyToScreenName(),status.getText(),status.getGeoLocation(),status.getCreatedAt());
+             state.setSentiment(tweet.sentiment);
+             count+=1;
+             if (count== MAX_TWEETS_PER_STATE)
+             {
+                 break;
+                }
+        }
 
     }
     

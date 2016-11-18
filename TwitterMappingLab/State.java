@@ -9,18 +9,20 @@ import java.util.Scanner;
 import twitter4j.*;
 
 /**
- * Write a description of class State here.
+ * Makes a state with abbreviation, center, area, and sentiment.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Harrison Loh 
+ * @version 11/17/16
  */
 public class State
 {
-    /** description of instance variable x (add comment for each instance variable) */
+    /**
+     * Sets abbreviation of state, center of state, area of state, and sentiment of state.
+     */
     private String abbreviation;
     private twitter4j.GeoLocation center;
     private double area;
-    private double sentiment;
+    public double sentiment;
     /**
      * Default constructor for objects of class State
      */
@@ -33,45 +35,53 @@ public class State
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
-     *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
+     * Sets the sentiment value for the instance variable
      */
     public void setSentiment(double sentval)
     {
         this.sentiment = sentval;
     }
     
-
+    
+    /*
+     * Gets the state abbreviation
+     */
     public String getAbbreviation()
     {
-        return this.abbreviation;
+        return abbreviation;
     }
+    /*
+     * Gets the center of the states
+     */
     public twitter4j.GeoLocation getCenter()
     {
-        return this.center;
+        return center;
     }
+    /*
+     * Gets the Area of the State
+     */
         public double getArea()
     {
-        return this.area;
+        return area;
     }
+    /*
+     * Gets the sentiment
+     */
         public double getSentiment()
     {
-        return this.sentiment;
+        return sentiment;
     }
-    
+    /*
+     * Gets the Radius of the State
+     */
     public double getRadius()
     {
         double rad = Math.sqrt(area/3.14);
         return rad;
     }
-    
+    /*
+     * ToString returns instance varib. in strings.
+     */
     public String toString()
     {
         String val = "The State abbreviation is " + abbreviation + ". The center is " + center
